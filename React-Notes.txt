@@ -1,0 +1,50 @@
+JavaScript refresher
+    let & const
+        let & const are simply replacement of var
+        let - can have more than 1 assignment
+        const - can have at most one assignment. Otherwise error will be thrown. Good way to make sure, value is not changed anywhere.
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+    export & import
+        2 types named and unnamed exports
+            default(named) => export default ...;
+            named => export const someData = ...;
+        importing named export - Should be wrapped inside {}
+            import { nameOfExport } from './path/to/file'
+                    or
+            import * as bundled from './path/to/file'
+            bundled.<nameOfExport>
+        importing unnamed(default) export - Doesn't need {}
+            import anyName from './path/to/file'
+        A file can have only one default export and any number of named exports
+    Spread & Rest operator
+        ... means spread or Rest operator based on where it is used
+        If used in array spreads array into individual elements of array
+            const oldArray = [1, 2, 3];
+            const newArray = [...oldArray, 4, 5];
+
+            const oldObject = {
+            name: 'Max'
+            };
+            const newObject = {
+            ...oldObject,
+            age: 28
+            };
+        If used in method parameter, it compressses all parameters into an 
+            function restExample(...restParam){
+                restParam[0]+restParam[1];
+            }
+            restExample(2,3);
+    Destructuring
+        Allows to pick specific elements of array or properties of a object
+            const [a,,b] = [1,2,3];
+            console.log(a,b);//prints 1 3
+            const [c,d] = [1,2,3];            
+            console.log(c,d);//prints 1 2
+
+            let person = {name:Ragul, Age:34};
+            let [name] = person;
+            console.log(name);//prints Ragul
+    Array functions
+        Set of functions we can perform on each element of an array
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
